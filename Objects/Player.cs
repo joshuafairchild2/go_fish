@@ -9,7 +9,7 @@ namespace GoFish.Objects
     private string _name;
     private bool _isTurnPlayer;
     private List<string> _playerHand = new List<string>();  //we were missing " = new List<string>() "
-    public Player(string name, bool newBool)
+    public Player(string name, bool newBool = false)
     {
       _name = name;
       _isTurnPlayer = newBool;

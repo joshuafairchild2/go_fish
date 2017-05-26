@@ -9,8 +9,8 @@ namespace GoFish
     public HomeModule()
     {
       Get["/"] = _ => {
-        Player player1 = new Player("Tom", true);
-        
+        Player player1 = new Player("Tom");
+
 
         return View["test.cshtml", player1];
       };
