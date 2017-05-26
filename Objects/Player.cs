@@ -8,11 +8,11 @@ namespace GoFish.Objects
 
     private string _name;
     private bool _isTurnPlayer;
-    private List<string> _playerHand;
-    public Player(string name, bool hasTurn)
+    private List<string> _playerHand = new List<string>();  //we were missing " = new List<string>() "
+    public Player(string name, bool newBool)
     {
       _name = name;
-      _isTurnPlayer = hasTurn;
+      _isTurnPlayer = newBool;
       Deck.BuildDeck();
       _deck = Deck.GetAllCards();
       this.DrawCard(5);
@@ -21,7 +21,7 @@ namespace GoFish.Objects
     {
       for(int i = 1; i <= cardsToDraw; i++)
       {
-        _playerHand.Add(_deck[12]); /* THIS IS PROBLEMATIC */
+        _playerHand.Add(_deck[0]);
         this.RemoveCardFromDeck();
       }
     }

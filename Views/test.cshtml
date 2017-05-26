@@ -1,5 +1,12 @@
 <p>Player name: @Model.GetName()</p>
-<p>Bool: @Model.IsTurnPlayer()</p>
+<p>Turn player: @Model.IsTurnPlayer()</p>
 <h3>Player hand:</h3>
+@foreach(var card in @Model.GetHand())
+{
+  <li>@card</li>
+}
 <p>Deck:</p>
-@Model.GetDeck()[0]
+@foreach(var card in @Model.GetDeck())
+{
+  <li>@card</li>
+}
