@@ -1,5 +1,6 @@
 using Nancy;
 using System.Collections.Generic;
+using GoFish.Objects;
 
 namespace GoFish
 {
@@ -7,7 +8,12 @@ namespace GoFish
   {
     public HomeModule()
     {
-      
+      Get["/"] = _ => {
+        Player player1 = new Player("Tom", true);
+        
+
+        return View["test.cshtml", player1];
+      };
     }
   }
 }
